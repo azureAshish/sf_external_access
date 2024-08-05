@@ -1,5 +1,7 @@
 # Snowflake External Access: Retrieve Data from an API
 
+<img src="./Images/01.png" alt="Snowflake External Access: Retrieve Data from an API" />
+
 Snowflake External Network access feature allows us to reach network sites outside of Snowflake. This access can be used within stored procedures and user-defined functions for a variety of purposes, including using an API or an external service.
 
 External network access Feature is Generally Available now.
@@ -31,13 +33,18 @@ The other prerequisite is a database and schema where we will create our databas
 
 ## External API
 
+The World Bank offers an API that allows for the search and retrieval of the public, Bank documents available in the Documents & Reports site.  Records can be retrieved in a format useful for research and for inclusion in web sites outside of Documents & Reports and the World Bank. 
+
+I will use the World Bank API's that do not require any API keys or other authentication methods.
+
+[The World Bank Documents & Report API](https://documents.worldbank.org/en/publication/documents-reports/api)
 
 ## Step 1 - Configure an Outbound Network Rule
 
 Network rules are database objects used by Snowflake to store data about a particular kind of network traffic. One of two categories could apply to this traffic:
 
-Ingress – Traffic from outside of Snowflake that is coming in to Snowflake
-Egress – Traffic that is leaving Snowflake and travelling outside
+1. Ingress – Traffic from outside of Snowflake that is coming in to Snowflake
+2. Egress – Traffic that is leaving Snowflake and travelling outside
 
 ```     
 Create or Replace NETWORK RULE network_rule
